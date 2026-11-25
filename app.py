@@ -59,11 +59,4 @@ while True:
     # Update Line Chart
     chart_data = st.session_state.history.set_index("timestamp")[["latency"]]
     chart_placeholder.line_chart(chart_data)
-
-  except Exception as e:
-    st.warning(
-        "⚠️ Waiting for FastAPI Backend to start... Run `uvicorn main:app"
-        " --reload` in terminal."
-    )
-
-  time.sleep(1)  # Refresh every 1 second
+time.sleep(1)  # Refresh every 1 second
