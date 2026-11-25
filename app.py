@@ -1,4 +1,4 @@
-import time
+import random
 import pandas as pd
 import requests
 import streamlit as st
@@ -59,7 +59,7 @@ while True:
     # Update Line Chart
     chart_data = st.session_state.history.set_index("timestamp")[["latency"]]
     chart_placeholder.line_chart(chart_data)
-except Exception as e:
+    except Exception as e:
         latency = round(random.uniform(35.0, 260.0), 2)
         is_anomaly = 1 if latency > 210.0 else 0
         status = 503 if is_anomaly == 1 else 200
